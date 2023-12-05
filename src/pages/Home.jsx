@@ -1,5 +1,6 @@
-import Footer from "../components/Fragments/Footer";
-import Navbar from "../components/Fragments/Navbar";
+import { Link } from 'react-router-dom';
+import Footer from '../components/Fragments/Footer';
+import Navbar from '../components/Fragments/Navbar';
 
 const Home = () => {
   return (
@@ -19,9 +20,12 @@ const Home = () => {
             </div>
           </div>
           <div className="text-white font-semibold">
-            <a href="" className="bg-sky-900 rounded-xl text-center py-3 px-5">
+            <Link
+              to="/articles"
+              className="bg-sky-900 rounded-xl text-center py-3 px-5"
+            >
               Get Started
-            </a>
+            </Link>
           </div>
         </div>
 

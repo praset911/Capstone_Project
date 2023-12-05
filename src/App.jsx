@@ -1,8 +1,10 @@
-import Home from "./pages/Home";
+// import Articles from './pages/Articles';
+import GetArticles from './services/GetArticles';
+// import Home from './pages/Home';
 function App() {
   return (
     <div className="App">
-      <Home></Home>
+      <GetArticles></GetArticles>
     </div>
   );
 }
