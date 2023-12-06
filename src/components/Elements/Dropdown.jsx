@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-const DropdownTest = () => {
+// eslint-disable-next-line react/prop-types
+const Dropdown = ({ onSortChange }) => {
   const [isActive, setIsActive] = useState('date');
   const [isOpen, setIsOpen] = useState(false);
   const [sortOrder, setSortOrder] = useState('date');
@@ -17,6 +18,7 @@ const DropdownTest = () => {
     setIsActive(order);
     setSortOrder(order);
     setIsOpen(false);
+    onSortChange(order);
   };
 
   return (
@@ -88,13 +90,13 @@ const DropdownTest = () => {
             <a
               href="#"
               className={`${
-                isActive === 'author'
+                isActive === 'source'
                   ? 'hidden'
                   : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white'
               }`}
-              onClick={() => handleSortClick('author')}
+              onClick={() => handleSortClick('source')}
             >
-              Sort By Author
+              Sort By Source
             </a>
           </li>
         </ul>
@@ -103,4 +105,4 @@ const DropdownTest = () => {
   );
 };
 
-export default DropdownTest;
+export default Dropdown;

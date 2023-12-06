@@ -1,4 +1,3 @@
-// Carousel.jsx
 import { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -23,11 +22,15 @@ const Carousel = () => {
   const handleImageError = (index) => {
     const newArticles = [...articles];
     newArticles[index].urlToImage =
-      '/images/world-breaking-news-digital-earth-hud-rotating-globe-rotating-free-video.jpg'; // Ganti dengan path gambar lokal yang diinginkan
+      '/images/world-breaking-news-digital-earth-hud-rotating-globe-rotating-free-video.jpg';
     setArticles(newArticles);
   };
 
-  const displayedArticles = articles.slice(0, 5);
+  const filteredArticles = articles.filter(
+    (article) => article.source.name !== '[Removed]'
+  );
+
+  const displayedArticles = filteredArticles.slice(0, 5);
 
   return (
     <>
@@ -63,9 +66,8 @@ const Carousel = () => {
                 alt={article.title}
                 onError={() => handleImageError(index)}
               />
+              <p className="absolute">{article.title}</p>
             </a>
-
-            <p className="absolute">{article.title}</p>
           </SwiperSlide>
         ))}
       </Swiper>
