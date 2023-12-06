@@ -1,12 +1,8 @@
-import Footer from "../components/Fragments/Footer";
-import Navbar from "../components/Fragments/Navbar";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
-      <header>
-        <Navbar></Navbar>
-      </header>
       <body className="flex px-20 justify-between items-center py-10">
         <div className="flex-col">
           <div className="mb-5">
@@ -19,9 +15,12 @@ const Home = () => {
             </div>
           </div>
           <div className="text-white font-semibold">
-            <a href="" className="bg-sky-900 rounded-xl text-center py-3 px-5">
+            <Link
+              to="/articles"
+              className="bg-sky-900 rounded-xl text-center py-3 px-5"
+            >
               Get Started
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -29,9 +28,6 @@ const Home = () => {
           <img src="/images/nurse-1.webp" alt="" className="rounded-xl" />
         </div>
       </body>
-      <footer className="mt-auto">
-        <Footer></Footer>
-      </footer>
     </div>
   );
 };

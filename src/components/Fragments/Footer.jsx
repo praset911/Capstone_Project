@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className="bg-sky-700 px-20 py-5 pb-9 flex justify-between">
-      <div className="pt-20">
-        <Link to="/">
+    <div className="mt-auto">
+      <div className="bg-sky-700 px-20 py-5 pb-9 flex justify-between">
+        <div className="pt-20">
+          <Link to="/">
           <img
             src="/images/fit-life-hub-white-logo.png"
             alt="Fit-life-hub-white-logo"

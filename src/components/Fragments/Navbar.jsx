@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import NavButton from "../Elements/Navbutton";
 
 const Navbar = () => {
   return (
@@ -13,16 +13,13 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="space-x-10 text-lg font-medium">
-        <Link to="/" className="text-sky-900">Home</Link>
-        <a href="" className="text-gray-400">
-          Articles
-        </a>
-        <a href="" className="text-gray-400">
-          Calc It!
-        </a>
-        <Link to="/about-us" className="text-gray-400">About Us</Link>
+        <NavButton to="/" label="Home" />
+        <NavButton to="/articles" label="Articles" />
+        <NavButton to="/calculator" label="Calc It!" />
+        <NavButton to="" label="About Us" />
       </div>
     </div>
   );
 };
+
 export default Navbar;
