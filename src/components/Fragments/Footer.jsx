@@ -30,10 +30,10 @@ const Footer = () => {
         <div className="w-56">
           <p className="font-bold text-lg">Explore</p>
           <p className="border-b">
-            <a href="">Home</a>
+            <a href="/">Home</a>
           </p>
           <p className="border-b">
-            <a href="">Articles</a>
+            <a href="/articles">Articles</a>
           </p>
           <p className="border-b">
             <a href="">Calc It !</a>

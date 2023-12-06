@@ -1,3 +1,5 @@
+import NavButton from '../Elements/Navbutton';
+
 const Navbar = () => {
   return (
     <div className="bg-white px-20 py-7 item-center justify-between flex">
@@ -9,20 +11,13 @@ const Navbar = () => {
         />
       </div>
       <div className="space-x-10 text-lg font-medium">
-        <a href="" className="text-sky-900">
-          Home
-        </a>
-        <a href="" className="text-gray-400">
-          Articles
-        </a>
-        <a href="" className="text-gray-400">
-          Calc It!
-        </a>
-        <a href="" className="text-gray-400">
-          About Us
-        </a>
+        <NavButton to="/" label="Home" />
+        <NavButton to="/articles" label="Articles" />
+        <NavButton to="" label="Calc It!" />
+        <NavButton to="" label="About Us" />
       </div>
     </div>
   );
 };
+
 export default Navbar;
