@@ -1,20 +1,15 @@
-import { useState } from 'react';
-import Carousel from '../components/Fragments/Carousel';
-import Footer from '../components/Fragments/Footer';
-import Navbar from '../components/Fragments/Navbar';
-import Dropdown from '../components/Elements/Dropdown';
-import Card from '../components/Fragments/Card';
+import { useState } from "react";
+import Carousel from "../components/Fragments/Carousel";
+import Dropdown from "../components/Elements/Dropdown";
+import Card from "../components/Fragments/Card";
 const Articles = () => {
-  const [sortOrder, setSortOrder] = useState('date');
+  const [sortOrder, setSortOrder] = useState("date");
 
   const handleSortChange = (order) => {
     setSortOrder(order);
   };
   return (
     <div className="flex flex-col min-h-screen">
-      <header>
-        <Navbar></Navbar>
-      </header>
       <body className="px-20 py-10">
         <div>
           <h1 className="text-2xl font-bold">Latest Articles</h1>
@@ -32,9 +27,6 @@ const Articles = () => {
           <Card sortOrder={sortOrder} />
         </div>
       </body>
-      <footer className="mt-auto">
-        <Footer></Footer>
-      </footer>
     </div>
   );
 };
