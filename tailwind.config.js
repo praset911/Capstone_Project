@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -9,5 +8,5 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [require('flowbite/plugin'), ("daisyui")],
+  plugins: [require('flowbite/plugin')],
 };
