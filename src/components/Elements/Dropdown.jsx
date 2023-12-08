@@ -39,14 +39,13 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
 
   return (
     <div className="flex">
-      {/* Field Dropdown */}
       <div className="relative">
         <div
           id="fieldDropdownButton"
           data-dropdown-toggle="dropdown"
           onMouseEnter={handleFieldMouseEnter}
           onMouseLeave={handleFieldMouseLeave}
-          className="text-black border border-black rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center cursor-pointer" // Menambahkan cursor-pointer agar tampilan kursor sesuai
+          className="text-black border border-black rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center cursor-pointer"
         >
           {`Sort By ${sortField.charAt(0).toUpperCase() + sortField.slice(1)}`}
           <svg
@@ -120,7 +119,6 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
         </div>
       </div>
 
-      {/* Order Dropdown */}
       <div className="relative ml-4">
         <div
           id="orderDropdownButton"
