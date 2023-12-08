@@ -1,4 +1,4 @@
-import NavButton from '../Elements/Navbutton';
+import NavButton from "../Elements/Navbutton";
 
 const Navbar = () => {
   return (
@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="space-x-10 text-lg font-medium">
         <NavButton to="/" label="Home" />
         <NavButton to="/articles" label="Articles" />
-        <NavButton to="" label="Calc It!" />
+        <NavButton to="/calculator" label="Calc It!" />
         <NavButton to="" label="About Us" />
       </div>
     </div>

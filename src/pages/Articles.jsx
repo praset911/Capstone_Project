@@ -11,10 +11,6 @@ const Articles = () => {
     setSortField(field);
   };
 
-  const handleSortOrderChange = (order) => {
-    setSortOrder(order);
-  };
-
   return (
     <div>
       <body className="px-20 py-10">

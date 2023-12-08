@@ -1,8 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Fragments/Navbar';
-import Footer from './components/Fragments/Footer';
-import Home from './pages/Home';
-import Articles from './pages/Articles';
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Fragments/Navbar";
+import Footer from "./components/Fragments/Footer";
+import Home from "./pages/Home";
+import Articles from "./pages/Articles";
+import Calculator from "./pages/Calculator";
 
 const App = () => {
   return (
@@ -16,6 +18,7 @@ const App = () => {
         <Footer />
       </BrowserRouter>
     </div>
+
   );
 };
 
