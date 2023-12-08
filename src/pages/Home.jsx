@@ -16,7 +16,7 @@ const Home = () => {
           </div>
           <div className="text-white font-semibold">
             <Link
-              to="/articles"
+              to="/calculator"
               className="bg-sky-900 rounded-xl text-center py-3 px-5"
             >
               Get Started
