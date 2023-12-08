@@ -16,7 +16,7 @@ const formatDate = (isoDate) => {
   return dateObj.toLocaleDateString('id-ID', options);
 };
 // eslint-disable-next-line react/prop-types
-const Card = ({ sortOrder }) => {
+const Card = ({ sortField, sortOrder }) => {
   const [articles, setArticles] = useState([]);
   const [visibleArticles, setVisibleArticles] = useState(6);
   const [loadMore, setLoadMore] = useState(true);
@@ -40,13 +40,20 @@ const Card = ({ sortOrder }) => {
   const filteredArticles = articles.filter(
     (article) => article.source.name !== '[Removed]'
   );
+
   const sortedArticles = [...filteredArticles].sort((a, b) => {
-    if (sortOrder === 'date') {
-      return new Date(b.publishedAt) - new Date(a.publishedAt);
-    } else if (sortOrder === 'title') {
-      return a.title.localeCompare(b.title);
-    } else if (sortOrder === 'source') {
-      return a.source.name.localeCompare(b.source.name);
+    if (sortField === 'date') {
+      return sortOrder === 'asc'
+        ? new Date(a.publishedAt) - new Date(b.publishedAt)
+        : new Date(b.publishedAt) - new Date(a.publishedAt);
+    } else if (sortField === 'title') {
+      return sortOrder === 'asc'
+        ? a.title.localeCompare(b.title)
+        : b.title.localeCompare(a.title);
+    } else if (sortField === 'source') {
+      return sortOrder === 'asc'
+        ? a.source.name.localeCompare(b.source.name)
+        : b.source.name.localeCompare(a.source.name);
     }
     return 0;
   });
@@ -94,7 +101,7 @@ const Card = ({ sortOrder }) => {
                 <p>{formatDate(article.publishedAt)}</p>
               </div>
               <a href={article.url} target="_blank" rel="noreferrer">
-                <button className="bg-cyan-900 px-3 py-2 text-white font-semibold rounded text-sm">
+                <button className="bg-sky-900 px-3 py-2 text-white font-semibold rounded text-sm">
                   Read More
                 </button>
               </a>

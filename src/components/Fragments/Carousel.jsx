@@ -51,6 +51,7 @@ const Carousel = () => {
         navigation={{
           clickable: true,
         }}
+        loop={true}
         modules={[Autoplay, Pagination, Mousewheel, Navigation]}
         allowTouchMove={false}
         className="mySwiper"

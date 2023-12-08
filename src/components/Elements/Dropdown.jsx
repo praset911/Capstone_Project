@@ -1,105 +1,192 @@
 import { useState } from 'react';
 
 // eslint-disable-next-line react/prop-types
-const Dropdown = ({ onSortChange }) => {
-  const [isActive, setIsActive] = useState('date');
-  const [isOpen, setIsOpen] = useState(false);
-  const [sortOrder, setSortOrder] = useState('date');
+const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
+  const [fieldDropdownOpen, setFieldDropdownOpen] = useState(false);
+  const [orderDropdownOpen, setOrderDropdownOpen] = useState(false);
+  const [sortField, setSortField] = useState('date');
+  const [sortOrder, setSortOrder] = useState('asc');
 
-  const handleMouseEnter = () => {
-    setIsOpen(true);
+  const handleFieldMouseEnter = () => {
+    setFieldDropdownOpen(true);
   };
 
-  const handleMouseLeave = () => {
-    setIsOpen(false);
+  const handleFieldMouseLeave = () => {
+    setFieldDropdownOpen(false);
   };
 
-  const handleSortClick = (order) => {
-    setIsActive(order);
+  const handleOrderMouseEnter = () => {
+    setOrderDropdownOpen(true);
+  };
+
+  const handleOrderMouseLeave = () => {
+    setOrderDropdownOpen(false);
+  };
+
+  const handleSortFieldClick = (field) => {
+    if (field === 'title' || field === 'source' || field === 'date') {
+      onSortFieldChange(field);
+      setSortField(field);
+    }
+    setFieldDropdownOpen(false);
+  };
+
+  const handleSortOrderClick = (order) => {
+    onSortOrderChange(order);
     setSortOrder(order);
-    setIsOpen(false);
-    onSortChange(order);
+    setOrderDropdownOpen(false);
   };
 
   return (
-    <div className="relative">
-      <div
-        id="dropdownDefaultButton"
-        data-dropdown-toggle="dropdown"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="text-black border border-black rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center "
-      >
-        {`Sort By ${sortOrder.charAt(0).toUpperCase() + sortOrder.slice(1)}`}
-        <svg
-          className={`w-2.5 h-2.5 ms-3 ${isOpen ? 'transform rotate-180' : ''}`}
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 10 6"
+    <div className="flex">
+      {/* Field Dropdown */}
+      <div className="relative">
+        <div
+          id="fieldDropdownButton"
+          data-dropdown-toggle="dropdown"
+          onMouseEnter={handleFieldMouseEnter}
+          onMouseLeave={handleFieldMouseLeave}
+          className="text-black border border-black rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center cursor-pointer" // Menambahkan cursor-pointer agar tampilan kursor sesuai
         >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="m1 1 4 4 4-4"
-          />
-        </svg>
+          {`Sort By ${sortField.charAt(0).toUpperCase() + sortField.slice(1)}`}
+          <svg
+            className={`w-2.5 h-2.5 ms-3 ${
+              fieldDropdownOpen ? 'transform rotate-180' : ''
+            }`}
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="m1 1 4 4 4-4"
+            />
+          </svg>
+        </div>
+
+        <div
+          id="fieldDropdown"
+          className={`z-10 ${
+            fieldDropdownOpen ? '' : 'hidden'
+          } bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700 absolute`}
+          onMouseEnter={handleFieldMouseEnter}
+          onMouseLeave={handleFieldMouseLeave}
+        >
+          <ul
+            className="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="fieldDropdownButton"
+          >
+            <li>
+              <div
+                className={`${
+                  sortField === 'date'
+                    ? 'hidden'
+                    : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                }`}
+                onClick={() => handleSortFieldClick('date')}
+              >
+                Sort By Date
+              </div>
+            </li>
+            <li>
+              <div
+                className={`${
+                  sortField === 'title'
+                    ? 'hidden'
+                    : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                }`}
+                onClick={() => handleSortFieldClick('title')}
+              >
+                Sort By Title
+              </div>
+            </li>
+            <li>
+              <div
+                className={`${
+                  sortField === 'source'
+                    ? 'hidden'
+                    : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                }`}
+                onClick={() => handleSortFieldClick('source')}
+              >
+                Sort By Source
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div
-        id="dropdown"
-        className={`z-10 ${
-          isOpen ? '' : 'hidden'
-        } bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700`}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        <ul
-          className="py-2 text-sm text-gray-700 dark:text-gray-200"
-          aria-labelledby="dropdownDefaultButton"
+      {/* Order Dropdown */}
+      <div className="relative ml-4">
+        <div
+          id="orderDropdownButton"
+          data-dropdown-toggle="dropdown"
+          onMouseEnter={handleOrderMouseEnter}
+          onMouseLeave={handleOrderMouseLeave}
+          className="text-black border border-black rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center cursor-pointer" // Menambahkan cursor-pointer agar tampilan kursor sesuai
         >
-          <li>
-            <a
-              href="#"
-              className={`${
-                isActive === 'date'
-                  ? 'hidden'
-                  : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white'
-              }`}
-              onClick={() => handleSortClick('date')}
-            >
-              Sort By Date
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className={`${
-                isActive === 'title'
-                  ? 'hidden'
-                  : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white'
-              }`}
-              onClick={() => handleSortClick('title')}
-            >
-              Sort By Title
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className={`${
-                isActive === 'source'
-                  ? 'hidden'
-                  : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white'
-              }`}
-              onClick={() => handleSortClick('source')}
-            >
-              Sort By Source
-            </a>
-          </li>
-        </ul>
+          {`Sort ${sortOrder === 'asc' ? 'Ascending' : 'Descending'}`}
+          <svg
+            className={`w-2.5 h-2.5 ms-3 ${
+              orderDropdownOpen ? 'transform rotate-180' : ''
+            }`}
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 10 6"
+          >
+            <path
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="m1 1 4 4 4-4"
+            />
+          </svg>
+        </div>
+
+        <div
+          id="orderDropdown"
+          className={`z-10 ${
+            orderDropdownOpen ? '' : 'hidden'
+          } bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700 absolute`}
+          onMouseEnter={handleOrderMouseEnter}
+          onMouseLeave={handleOrderMouseLeave}
+        >
+          <ul
+            className="py-2 text-sm text-gray-700 dark:text-gray-200"
+            aria-labelledby="orderDropdownButton"
+          >
+            <li>
+              <div
+                className={`${
+                  sortOrder === 'asc'
+                    ? 'hidden'
+                    : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                }`}
+                onClick={() => handleSortOrderClick('asc')}
+              >
+                Sort Ascending
+              </div>
+            </li>
+            <li>
+              <div
+                className={`${
+                  sortOrder === 'desc'
+                    ? 'hidden'
+                    : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                }`}
+                onClick={() => handleSortOrderClick('desc')}
+              >
+                Sort Descending
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
