@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Fragments/Navbar";
 import Footer from "./components/Fragments/Footer";
@@ -14,11 +13,11 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="articles" element={<Articles />} />
+          <Route path="calculator" element={<Calculator />} />
         </Routes>
         <Footer />
       </BrowserRouter>
     </div>
-
   );
 };
 
