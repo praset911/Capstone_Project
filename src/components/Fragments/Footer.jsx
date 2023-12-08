@@ -40,7 +40,7 @@ const Footer = () => {
               <a href="">Calc It !</a>
             </p>
             <p className="border-b">
-              <a href="">About Us</a>
+              <a href="/about-us">About Us</a>
             </p>
           </div>
         </div>

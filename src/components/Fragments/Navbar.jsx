@@ -14,7 +14,7 @@ const Navbar = () => {
         <NavButton to="/" label="Home" />
         <NavButton to="/articles" label="Articles" />
         <NavButton to="/calculator" label="Calc It!" />
-        <NavButton to="" label="About Us" />
+        <NavButton to="/about-us" label="About Us" />
       </div>
     </div>
   );
