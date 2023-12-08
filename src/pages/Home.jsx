@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div>
       <body className="flex px-20 justify-between items-center py-10">
         <div className="flex-col">
           <div className="mb-5">
