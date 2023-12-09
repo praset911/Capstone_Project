@@ -6,10 +6,11 @@ export default {
     'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
   theme: {
-    extend: {},
+    extend: {
+      daisyui: {
+        themes: ['light'],
+      },
+    },
   },
-  plugins: [
-    require('flowbite/plugin'),
-    require('daisyui')
-  ],
+  plugins: [require('flowbite/plugin'), require('daisyui')],
 };
