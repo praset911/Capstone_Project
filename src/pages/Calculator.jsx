@@ -24,7 +24,9 @@ const Calculator = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <body>
-        <h1 className="text-center text-black text-2xl font-bold">Calc It!</h1>
+        <h1 className="text-center text-sky-800 text-2xl font-bold">
+          Calc It!
+        </h1>
         <h4 className="text-center text-zinc-500 font-normal text-xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor <br />
