@@ -2,11 +2,21 @@ import PropTypes from 'prop-types';
 
 const LogoSVG = ({ socialMedia }) => {
   return (
-    <ul className="menu menu-horizontal mt-0 rounded-box">
+    <ul className="menu menu-horizontal flex px-6 pt-2 mt-0 rounded-box">
       {socialMedia.map((platform) => (
-        <li key={platform.name}>
-          <a href={platform.url} target="_blank" rel="noopener noreferrer" className="tooltip" data-tip={platform.name}>
-            <img src={`/logo-sosmed/logo-${platform.name.toLowerCase()}.svg`} alt={platform.name} className="h-5 w-5" />
+        <li key={platform.name} className="px-1">
+          <a
+            href={platform.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="tooltip"
+            data-tip={platform.name}
+          >
+            <img
+              src={`/logo-sosmed/logo-${platform.name.toLowerCase()}.svg`}
+              alt={platform.name}
+              className="h-5 w-5"
+            />
           </a>
         </li>
       ))}

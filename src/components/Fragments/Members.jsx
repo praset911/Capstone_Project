@@ -5,7 +5,7 @@ const members = [
   {
     name: 'Tralya Dharmada',
     role: 'Project Manager',
-    imageSrc: '../../public/images/profile/abyan.jpg',
+    imageSrc: '/images/profile/abyan.jpg',
     socialMedia: [
       { name: 'Instagram', url: 'https://#/' },
       { name: 'Linkedin', url: 'https://#/' },
@@ -15,7 +15,7 @@ const members = [
   {
     name: 'Muhammad Abyan Shidqi',
     role: 'Front-End Developer',
-    imageSrc: '../../public/images/profile/abyan.jpg',
+    imageSrc: '/images/profile/abyan.jpg',
     socialMedia: [
       { name: 'Instagram', url: 'https://www.instagram.com/abyansdq/' },
       { name: 'Linkedin', url: 'https://www.linkedin.com/in/abyansdq/' },
@@ -25,17 +25,20 @@ const members = [
   {
     name: 'Prasetya Kusuma Atmaja',
     role: 'Front-End Developer',
-    imageSrc: '../../public/images/profile/abyan.jpg',
+    imageSrc: '/images/profile/pras.jpeg',
     socialMedia: [
-      { name: 'Instagram', url: 'https://#/' },
-      { name: 'Linkedin', url: 'https://#/' },
-      { name: 'Github', url: 'https://#' },
+      { name: 'Instagram', url: 'https://instagram.com/prstyaka_/' },
+      {
+        name: 'Linkedin',
+        url: 'https://www.linkedin.com/in/prasetya-kusuma-atmaja-15630a29a/',
+      },
+      { name: 'Github', url: 'https://github.com/praset911' },
     ],
   },
   {
     name: 'Mohammad Agil Rofiqul Zein',
     role: 'Back-End Developer',
-    imageSrc: '../../public/images/profile/abyan.jpg',
+    imageSrc: '/images/profile/abyan.jpg',
     socialMedia: [
       { name: 'Instagram', url: 'https://#/' },
       { name: 'Linkedin', url: 'https://#/' },
@@ -45,7 +48,7 @@ const members = [
   {
     name: 'Ahmad Hauzan Abis Romadhon',
     role: 'Back-End Developer',
-    imageSrc: '../../public/images/profile/abyan.jpg',
+    imageSrc: '/images/profile/abyan.jpg',
     socialMedia: [
       { name: 'Instagram', url: 'https://#/' },
       { name: 'Linkedin', url: 'https://#/' },
@@ -56,30 +59,36 @@ const members = [
 
 const MemberProfile = ({ name, role, imageSrc, socialMedia }) => (
   <div className="rounded-md mb-10 bg-white sm:mb-0 sm:w-64 md:w-80">
-    <img src={imageSrc} alt={`${name} Profile`} className="w-[200px] h-[200px] object-cover rounded-full m-auto" />
+    <img
+      src={imageSrc}
+      alt={`${name} Profile`}
+      className="w-[200px] h-[200px] object-cover rounded-full m-auto"
+    />
     <div className="px-6 pt-4">
       <p className="font-bold text-xl mb-2 text-slate-700">{name}</p>
       <p className="text-sm text-slate-600">{role}</p>
     </div>
-    <LogoSVG socialMedia={socialMedia}/>
+    <LogoSVG socialMedia={socialMedia} />
   </div>
 );
 
 MemberProfile.propTypes = {
-    name: PropTypes.string.isRequired,
-    role: PropTypes.string.isRequired,
-    imageSrc: PropTypes.string.isRequired,
-    socialMedia: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-      })
-    ).isRequired,
+  name: PropTypes.string.isRequired,
+  role: PropTypes.string.isRequired,
+  imageSrc: PropTypes.string.isRequired,
+  socialMedia: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 const Members = () => (
-  <section className='my-20'>
-    <h2 className="mb-10 text-center font-bold text-3xl text-slate-700">Meet Our Members</h2>
+  <section className="my-20">
+    <h2 className="mb-10 text-center font-bold text-3xl text-slate-700">
+      Meet Our Members
+    </h2>
     <div className="container mx-auto px-6 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly">
       {members.map((member, index) => (
         <MemberProfile key={index} {...member} />
