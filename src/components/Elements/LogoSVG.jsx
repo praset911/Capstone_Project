@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 const LogoSVG = ({ socialMedia }) => {
   return (
-    <ul className="menu menu-horizontal flex px-6 pt-2 mt-0 rounded-box">
+    <ul className="menu menu-horizontal mt-0 rounded-box">
       {socialMedia.map((platform) => (
-        <li key={platform.name} className="px-1">
+        <li key={platform.name}>
           <a
             href={platform.url}
             target="_blank"

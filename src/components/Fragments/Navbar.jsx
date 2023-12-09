@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="bg-white px-5 md:px-20 py-16 md:py-7 item-center justify-between flex flex-col md:flex-row">
+    <div className="bg-white px-5 md:px-10 lg:px-20 py-16 md:py-7 item-center justify-between flex flex-col md:flex-row">
       <div className="flex justify-between">
         <img
           src="/images/fit-life-hub-high-resolution-logo-transparent.png"
