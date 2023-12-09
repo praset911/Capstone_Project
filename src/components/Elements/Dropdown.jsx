@@ -71,12 +71,12 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
           id="fieldDropdown"
           className={`z-10 ${
             fieldDropdownOpen ? '' : 'hidden'
-          } bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700 absolute`}
+          } bg-white divide-y divide-gray-100 rounded-lg shadow w-full absolute`}
           onMouseEnter={handleFieldMouseEnter}
           onMouseLeave={handleFieldMouseLeave}
         >
           <ul
-            className="py-2 md:text-sm text-xs text-gray-700 dark:text-gray-200"
+            className="py-2 md:text-sm text-xs text-gray-700"
             aria-labelledby="fieldDropdownButton"
           >
             <li>
@@ -84,7 +84,7 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
                 className={`${
                   sortField === 'date'
                     ? 'hidden'
-                    : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                    : 'block px-4 py-2 hover:bg-gray-200 cursor-pointer'
                 }`}
                 onClick={() => handleSortFieldClick('date')}
               >
@@ -96,7 +96,7 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
                 className={`${
                   sortField === 'title'
                     ? 'hidden'
-                    : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                    : 'block px-4 py-2 hover:bg-gray-200 cursor-pointer'
                 }`}
                 onClick={() => handleSortFieldClick('title')}
               >
@@ -108,7 +108,7 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
                 className={`${
                   sortField === 'source'
                     ? 'hidden'
-                    : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                    : 'block px-4 py-2 hover:bg-gray-200 cursor-pointer'
                 }`}
                 onClick={() => handleSortFieldClick('source')}
               >
@@ -151,12 +151,12 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
           id="orderDropdown"
           className={`z-10 ${
             orderDropdownOpen ? '' : 'hidden'
-          } bg-white divide-y divide-gray-100 rounded-lg shadow w-full dark:bg-gray-700 absolute`}
+          } bg-white divide-y divide-gray-100 rounded-lg shadow w-full absolute`}
           onMouseEnter={handleOrderMouseEnter}
           onMouseLeave={handleOrderMouseLeave}
         >
           <ul
-            className="py-2 md:text-sm text-xs text-gray-700 dark:text-gray-200"
+            className="py-2 md:text-sm text-xs text-gray-700"
             aria-labelledby="orderDropdownButton"
           >
             <li>
@@ -164,7 +164,7 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
                 className={`${
                   sortOrder === 'asc'
                     ? 'hidden'
-                    : 'block px-4 py-2  hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                    : 'block px-4 py-2  hover:bg-gray-200 cursor-pointer'
                 }`}
                 onClick={() => handleSortOrderClick('asc')}
               >
@@ -176,7 +176,7 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
                 className={`${
                   sortOrder === 'desc'
                     ? 'hidden'
-                    : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                    : 'block px-4 py-2 hover:bg-gray-200 cursor-pointer'
                 }`}
                 onClick={() => handleSortOrderClick('desc')}
               >
