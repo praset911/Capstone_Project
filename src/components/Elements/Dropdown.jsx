@@ -45,7 +45,7 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
           data-dropdown-toggle="dropdown"
           onMouseEnter={handleFieldMouseEnter}
           onMouseLeave={handleFieldMouseLeave}
-          className="text-black border border-black rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center cursor-pointer"
+          className="text-black border border-black rounded-lg text-xs md:text-sm px-3 py-2 md:px-5 md:py-2.5 text-center inline-flex items-center cursor-pointer"
         >
           {`Sort By ${sortField.charAt(0).toUpperCase() + sortField.slice(1)}`}
           <svg
@@ -76,7 +76,7 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
           onMouseLeave={handleFieldMouseLeave}
         >
           <ul
-            className="py-2 text-sm text-gray-700 dark:text-gray-200"
+            className="py-2 md:text-sm text-xs text-gray-700 dark:text-gray-200"
             aria-labelledby="fieldDropdownButton"
           >
             <li>
@@ -119,13 +119,13 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
         </div>
       </div>
 
-      <div className="relative ml-4">
+      <div className="relative  ml-2 md:ml-4">
         <div
           id="orderDropdownButton"
           data-dropdown-toggle="dropdown"
           onMouseEnter={handleOrderMouseEnter}
           onMouseLeave={handleOrderMouseLeave}
-          className="text-black border border-black rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center cursor-pointer" // Menambahkan cursor-pointer agar tampilan kursor sesuai
+          className="text-black border border-black rounded-lg text-xs md:text-sm px-3 py-2 md:px-5 md:py-2.5 text-center inline-flex items-center cursor-pointer" // Menambahkan cursor-pointer agar tampilan kursor sesuai
         >
           {`Sort ${sortOrder === 'asc' ? 'Ascending' : 'Descending'}`}
           <svg
@@ -156,7 +156,7 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
           onMouseLeave={handleOrderMouseLeave}
         >
           <ul
-            className="py-2 text-sm text-gray-700 dark:text-gray-200"
+            className="py-2 md:text-sm text-xs text-gray-700 dark:text-gray-200"
             aria-labelledby="orderDropdownButton"
           >
             <li>
@@ -164,7 +164,7 @@ const Dropdown = ({ onSortFieldChange, onSortOrderChange }) => {
                 className={`${
                   sortOrder === 'asc'
                     ? 'hidden'
-                    : 'block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
+                    : 'block px-4 py-2  hover:bg-gray-200 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
                 }`}
                 onClick={() => handleSortOrderClick('asc')}
               >

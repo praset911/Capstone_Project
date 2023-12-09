@@ -53,7 +53,7 @@ const Carousel = () => {
         }}
         loop={true}
         modules={[Autoplay, Pagination, Mousewheel, Navigation]}
-        allowTouchMove={false}
+        // allowTouchMove={false}
         className="mySwiper"
       >
         {displayedArticles.map((article, index) => (
