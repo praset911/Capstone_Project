@@ -73,9 +73,9 @@ const Card = ({ sortField, sortOrder }) => {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-4 gap-8">
         {displayArticles.map((article, index) => (
-          <div key={index} className="px-4 py-4 rounded shadow-xl">
+          <div key={index} className="md:px-4 md:py-4 py-2 rounded shadow-xl">
             <div>
               <img
                 src={
@@ -87,7 +87,7 @@ const Card = ({ sortField, sortOrder }) => {
                 onError={() => handleImageError(index)}
               />
             </div>
-            <div className=" h-52">
+            <div className="py-2 h-52 md:py-0">
               <p className="font-bold">{article.title}</p>
               <p>
                 {article.description
@@ -95,13 +95,13 @@ const Card = ({ sortField, sortOrder }) => {
                   : ''}
               </p>
             </div>
-            <div className="flex justify-between px-1">
-              <div className="row">
+            <div className="flex justify-between md:px-1 px-3">
+              <div className="row md:text-sm lg:text-base">
                 <p>Source : {article.source.name}</p>
                 <p>{formatDate(article.publishedAt)}</p>
               </div>
               <a href={article.url} target="_blank" rel="noreferrer">
-                <button className="bg-sky-900 px-3 py-2 text-white font-semibold rounded text-sm">
+                <button className="bg-sky-900 px-3 py-2 text-white font-semibold rounded md:text-sm">
                   Read More
                 </button>
               </a>
@@ -116,7 +116,7 @@ const Card = ({ sortField, sortOrder }) => {
             Show: {visibleArticles} of {sortedArticles.length} articles
           </p>
           {loadMore && (
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-5 md:mb-0">
               <button
                 onClick={handleLoadMore}
                 className="bg-cyan-900 px-4 py-2 text-white rounded"

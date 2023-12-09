@@ -17,7 +17,7 @@ const Articles = () => {
 
   return (
     <div>
-      <body className="px-20 py-10">
+      <body className="px-5 lg:px-20 md:py-10">
         <div>
           <h1 className="text-2xl font-bold">Latest Articles</h1>
           <div>
@@ -26,7 +26,7 @@ const Articles = () => {
         </div>
         <div className="pb-16">
           <h1 className="font-bold text-2xl">All Articles</h1>
-          <div className="absolute right-0 px-20">
+          <div className="absolute md:right-0  py-3 md:py-0 md:px-5 lg:px-20">
             <Dropdown
               onSortFieldChange={handleSortFieldChange}
               onSortOrderChange={handleSortOrderChange}

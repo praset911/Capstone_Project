@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
-import { calculateBMI } from "../components/Utils/BMICal";
-import BMIResult from "../components/Fragments/BMIRes";
+import React, { useState } from 'react';
+import { calculateBMI } from '../components/Utils/BMICal';
+import BMIResult from '../components/Fragments/BMIRes';
 
 const Calculator = () => {
-  const [weight, setWeight] = useState("");
-  const [height, setHeight] = useState("");
+  const [weight, setWeight] = useState('');
+  const [height, setHeight] = useState('');
   const [bmi, setBMI] = useState(null);
 
   const handleWeightChange = (e) => {

@@ -6,10 +6,10 @@ const Footer = () => {
           <img
             src="/images/fit-life-hub-white-logo.png"
             alt="Fit-life-hub-white-logo"
-            className="md:h-10 h-8"
+            className="lg:h-10 h-8"
           />
         </div>
-        <div className="flex flex-col md:flex-row md:space-x-20 text-white leading-loose">
+        <div className="flex flex-col md:flex-row md:space-x-5 lg:space-x-20 text-white leading-loose">
           <div className="md:py-0 py-10 text-sm md:text-base">
             <p className="font-bold md:text-lg">Our Members</p>
             <p className="border-b py-1 md:py-0">
