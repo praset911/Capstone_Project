@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className="mt-auto">
@@ -12,20 +13,24 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row md:space-x-5 lg:space-x-20 text-white leading-loose">
           <div className="md:py-0 py-10 text-sm md:text-base">
             <p className="font-bold md:text-lg">Our Members</p>
-            <p className="border-b py-1 md:py-0">
-              <a href="">Tralya Dharmada</a>
+            <p className="border-b py-1">
+              <Link to="/about-us#memberSection">Tralya Dharmada</Link>
             </p>
             <p className="border-b py-1">
-              <a href="">Prasetya Kusuma Atmaja</a>
+              <Link to="/about-us#memberSection">Prasetya Kusuma Atmaja</Link>
             </p>
             <p className="border-b py-1">
-              <a href="">Muhammad Abyan Shidqi</a>
+              <Link to="/about-us#memberSection">Muhammad Abyan Shidqi</Link>
             </p>
             <p className="border-b py-1">
-              <a href="">Ahmad Hauzan Abid Romadhon</a>
+              <Link to="/about-us#memberSection">
+                Ahmad Hauzan Abid Romadhon
+              </Link>
             </p>
             <p className="border-b py-1">
-              <a href="">Mohammad Agil Rofiqul Zein</a>
+              <Link to="/about-us#memberSection">
+                Mohammad Agil Rofiqul Zein
+              </Link>
             </p>
           </div>
           <div className="w-full md:w-56 pb-16 md:pb-0 text-sm md:text-base">

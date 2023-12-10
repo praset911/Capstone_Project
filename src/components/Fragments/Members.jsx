@@ -85,7 +85,7 @@ MemberProfile.propTypes = {
 };
 
 const Members = () => (
-  <section className="my-20">
+  <section id="memberSection" className="my-20">
     <h2 className="mb-10 text-center font-bold text-3xl text-slate-700">
       Meet Our Members
     </h2>
