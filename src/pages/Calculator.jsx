@@ -23,7 +23,7 @@ const Calculator = () => {
 
   const handleCalculate = () => {
     if (!gender || !weight || !height || !age) {
-      setErrorMessage("Silakan lengkapi semua kolom");
+      setErrorMessage("Please fill the columns");
       return;
     }
 
@@ -43,10 +43,9 @@ const Calculator = () => {
     <body className="min-h-screen">
       <h1 className="text-center text-sky-800 text-2xl font-bold">Calc BMI!</h1>
       <h4 className="text-center text-zinc-500 font-normal text-xl">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor <br />
-        incididunt ut labore et dolore magna aliqua. Non diam phasellus
-        vestibulum lorem
+        Welcome to Calc it! <br />
+        Maintaining a healthy weight is crucial for overall well-being. <br />
+        Discover your Body Mass Index, Calories needs, and ideal weight with our calculator.
       </h4>
 
       <div className="flex mx-[100px] justify-between py-10 gap-x-20">

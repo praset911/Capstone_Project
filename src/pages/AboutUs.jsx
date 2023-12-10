@@ -1,5 +1,6 @@
 import Profile from '../components/Fragments/Profile';
 import Members from '../components/Fragments/Members';
+import WhyUs from '../components/Fragments/WhyUs';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ const AboutUs = () => {
     <div className="flex flex-col min-h-screen">
       <body>
         <Profile />
+        <WhyUs />
         <Members />
       </body>
     </div>

@@ -5,11 +5,11 @@ const members = [
   {
     name: 'Tralya Dharmada',
     role: 'Project Manager',
-    imageSrc: '/images/profile/abyan.jpg',
+    imageSrc: '/images/profile/tral.jpg',
     socialMedia: [
-      { name: 'Instagram', url: 'https://#/' },
-      { name: 'Linkedin', url: 'https://#/' },
-      { name: 'Github', url: 'https://#' },
+      { name: 'Instagram', url: 'https://www.instagram.com/tralyaa_/' },
+      { name: 'Linkedin', url: 'https://www.linkedin.com/in/tralya-dharmada/' },
+      { name: 'Github', url: 'https://github.com/tralyaa' }
     ],
   },
   {
@@ -28,25 +28,22 @@ const members = [
     imageSrc: '/images/profile/pras.jpeg',
     socialMedia: [
       { name: 'Instagram', url: 'https://instagram.com/prstyaka_/' },
-      {
-        name: 'Linkedin',
-        url: 'https://www.linkedin.com/in/prasetya-kusuma-atmaja-15630a29a/',
-      },
+      { name: 'Linkedin', url: 'https://www.linkedin.com/in/prasetya-kusuma-atmaja-15630a29a/' },
       { name: 'Github', url: 'https://github.com/praset911' },
     ],
   },
   {
     name: 'Mohammad Agil Rofiqul Zein',
     role: 'Back-End Developer',
-    imageSrc: '/images/profile/abyan.jpg',
+    imageSrc: '/images/profile/agil.jpeg',
     socialMedia: [
-      { name: 'Instagram', url: 'https://#/' },
-      { name: 'Linkedin', url: 'https://#/' },
-      { name: 'Github', url: 'https://#' },
+      { name: 'Instagram', url: 'https://https://instagram.com/11agil/' },
+      { name: 'Linkedin', url: 'https://www.linkedin.com/in/mohammad-agil/' },
+      { name: 'Github', url: 'https://https://github.com/Mohammadagil' },
     ],
   },
   {
-    name: 'Ahmad Hauzan Abis Romadhon',
+    name: 'Ahmad Hauzan Abid Romadhon',
     role: 'Back-End Developer',
     imageSrc: '/images/profile/abyan.jpg',
     socialMedia: [
@@ -58,7 +55,7 @@ const members = [
 ];
 
 const MemberProfile = ({ name, role, imageSrc, socialMedia }) => (
-  <div className="rounded-md mb-10 bg-white sm:mb-0 sm:w-64 md:w-80">
+  <div className="rounded-md mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 hover:-translate-y-4 duration-500 ease-in-out">
     <img
       src={imageSrc}
       alt={`${name} Profile`}
