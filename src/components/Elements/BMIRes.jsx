@@ -7,15 +7,17 @@ const BMIResult = ({ bmi }) => (
     <h2>Your BMI is:</h2>
     <br />
     <h3 className="text-5xl">{bmi}</h3>
-    <h3>
-      {bmi < 18.5
-        ? "Underweight"
-        : bmi < 25
-        ? "Normal weight"
-        : bmi < 30
-        ? "Overweight"
-        : "Obesity"}
-    </h3>
+    {bmi && (
+      <h3>
+        {bmi < 18.5
+          ? "Underweight"
+          : bmi < 25
+          ? "Normal weight"
+          : bmi < 30
+          ? "Overweight"
+          : "Obesity"}
+      </h3>
+    )}
   </div>
 );
 
