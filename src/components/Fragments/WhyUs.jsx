@@ -10,7 +10,7 @@ const WhyUs = () =>{
             <div className="rounded-bl-md rounded-tl-md w-full relative rounded-[52px]">
                 <div className="flex-auto text-center p-8 md:p-14">
                     <img 
-                    src="public/images/icon-WhyUs/icon1.png"
+                    src="/images/icon-WhyUs/icon1.png"
                     alt="Reliable Information"
                     className="object-cover rounded-[52px] m-auto w-[50px] h-[50px]"
                     />
@@ -32,7 +32,7 @@ const WhyUs = () =>{
             <div className="rounded-bl-md rounded-tl-md w-full relative rounded-[52px]">
                 <div className="flex-auto text-center p-8 md:p-14">
                     <img 
-                    src="public/images/icon-WhyUs/icon2.png"
+                    src="/images/icon-WhyUs/icon2.png"
                     alt="Accurate Calculation Tools"
                     className="object-cover rounded-[52px] justify-items-center m-auto w-[50px] h-[50px]"
                     />
@@ -54,7 +54,7 @@ const WhyUs = () =>{
             <div className="rounded-bl-md rounded-tl-md w-full relative rounded-[52px]">
                 <div className="flex-auto text-center p-8 md:p-14">
                     <img 
-                    src="public/images/icon-WhyUs/icon3.png"
+                    src="/images/icon-WhyUs/icon3.png"
                     alt="Personal Support"
                     className="object-cover rounded-[52px] justify-items-center m-auto w-[50px] h-[50px]"
                     />
