@@ -3,7 +3,7 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/services/API",
+      "source": "/services/(.*)",
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
