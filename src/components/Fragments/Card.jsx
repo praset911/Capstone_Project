@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import getNewsData from '../../services/API';
 
-const formatDate = (isoDate) => {
-  const dateObj = new Date(isoDate);
+const formatDate = (pubDate) => {
+  const dateObj = new Date(pubDate);
   const options = {
     year: 'numeric',
     month: 'numeric',
@@ -37,7 +37,7 @@ const Card = ({ sortField, sortOrder }) => {
 
   const handleImageError = (index) => {
     const newArticles = [...articles];
-    newArticles[index].image.large =
+    newArticles[index].thumbnail =
       '/images/world-breaking-news-digital-earth-hud-rotating-globe-rotating-free-video.jpg';
     setArticles(newArticles);
   };
@@ -45,8 +45,8 @@ const Card = ({ sortField, sortOrder }) => {
   const sortedArticles = [...articles].sort((a, b) => {
     if (sortField === 'date') {
       return sortOrder === 'asc'
-        ? new Date(b.isoDate) - new Date(a.isoDate) // Reverse the order
-        : new Date(a.isoDate) - new Date(b.isoDate);
+        ? new Date(b.pubDate) - new Date(a.pubDate) // Reverse the order
+        : new Date(a.pubDate) - new Date(b.pubDate);
     } else if (sortField === 'title') {
       return sortOrder === 'asc'
         ? a.title.localeCompare(b.title)
@@ -76,7 +76,7 @@ const Card = ({ sortField, sortOrder }) => {
             <div>
               <img
                 src={
-                  article.image.large ||
+                  article.thumbnail ||
                   '/images/world-breaking-news-digital-earth-hud-rotating-globe-rotating-free-video.jpg'
                 }
                 alt={article.title}
@@ -87,14 +87,14 @@ const Card = ({ sortField, sortOrder }) => {
             <div className="py-2 h-52 md:py-0">
               <p className="font-bold">{article.title}</p>
               <p>
-                {article.contentSnippet
-                  ? article.contentSnippet.substring(0, 100) + '...'
+                {article.description
+                  ? article.description.substring(0, 100) + '...'
                   : ''}
               </p>
             </div>
             <div className="flex justify-between md:px-1 px-3">
               <div className="row md:text-sm lg:text-base">
-                <p>{formatDate(article.isoDate)}</p>
+                <p>{formatDate(article.pubDate)}</p>
               </div>
               <a href={article.link} target="_blank" rel="noreferrer">
                 <button className="bg-sky-900 px-3 py-2 text-white font-semibold rounded md:text-sm">
