@@ -1,8 +1,8 @@
 {
     "cleanUrls": true,
-    "trailingSlash"
-    "rewrites": [
-      { "source": "/", "dest": "/" },
+    "trailingSlash": false,
+    "routes": [
+      { "src": "/", "dest": "/" },
       { "src": "/articles", "dest": "/" },
       { "src": "/calc-it", "dest": "/" },
       { "src": "/about-us", "dest": "/" }
