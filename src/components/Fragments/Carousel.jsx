@@ -25,7 +25,7 @@ const Carousel = () => {
 
   const handleImageError = (index) => {
     const newArticles = [...articles];
-    newArticles[index].image.large =
+    newArticles[index].thumbnail =
       '/images/world-breaking-news-digital-earth-hud-rotating-globe-rotating-free-video.jpg';
     setArticles(newArticles);
   };
@@ -60,7 +60,7 @@ const Carousel = () => {
             <a href={data.link} target="_blank" rel="noreferrer">
               <img
                 src={
-                  data.image.large ||
+                  data.thumbnail ||
                   '/images/world-breaking-news-digital-earth-hud-rotating-globe-rotating-free-video.jpg'
                 }
                 alt={data.title}
