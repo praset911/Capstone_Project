@@ -1,21 +1,22 @@
 {
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
-      {
-        "source": "/src/services/(.*)",
-        "headers": [
-          { "key": "Access-Control-Allow-Credentials", "value": "true" },
-          { "key": "Access-Control-Allow-Origin", "value": "*" },
-          { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
-          { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
-        ]
-      }
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "headers": [
+        {
+          "source": "/src/services/(.*)",
+          "headers": [
+            { "key": "Access-Control-Allow-Credentials", "value": "true" },
+            { "key": "Access-Control-Allow-Origin", "value": "*" },
+            { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
+            { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
+          ]
+        }
+      ],
+    "rewrites": [
+      { "source": "/", "destination": "/" },
+      { "source": "/articles", "destination": "/" },
+      { "source": "/calc-it", "destination": "/" },
+      { "source": "/about-us", "destination": "/" }
     ]
-  "rewrites": [
-    { "source": "/", "destination": "/" },
-    { "source": "/articles", "destination": "/" },
-    { "source": "/calc-it", "destination": "/" },
-    { "source": "/about-us", "destination": "/" }
-  ]
-}
+  }
+  
