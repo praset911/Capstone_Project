@@ -3,9 +3,9 @@ import axios from 'axios';
 const getNewsData = async () => {
   try {
     const response = await axios.get(
-      `https://berita-indo-api-next.vercel.app/api/suara-news/health`
+      `https://api-berita-indonesia.vercel.app/suara/health/`
     );
-    return response.data.data || [];
+    return response.data.data.posts || [];
   } catch (error) {
     console.error('Error fetching news data:', error);
     return [];
